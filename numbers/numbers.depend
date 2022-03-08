@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1646175392 source:/home/pi/Documents/codeblocks_proj/numbers/main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
