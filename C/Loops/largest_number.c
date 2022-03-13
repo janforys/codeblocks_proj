@@ -3,19 +3,19 @@
 int main()
 {
     double a,b,c;
-    scanf("%lf%lf%lf", &a, &b, &c);
+    scanf("%lf%lf%lf",&a,&b,&c);
 
     if ((a>b)&&(a>c))
         {
-            printf("The largest is %lf", a);
+            printf("\nThe largest is %lf\n", a);
         }
     else if ((c>a)&&(c>b))
         {
-            printf("The largest is %lf", c);
+            printf("\nThe largest is %lf\n", c);
         }
     else
         {
-            printf("The largest is %lf", b);
+            printf("\nThe largest is %lf\n", b);
         }
     return 0;
 }
