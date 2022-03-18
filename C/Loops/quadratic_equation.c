@@ -19,7 +19,7 @@ int main()
             printf("x1 = %f\n",x1);
             printf("x2 = %f\n",x2);
         }
-    else if (DELTA==0) //then one x0 solutioin
+    else if (DELTA==0) //then one x0 solution
         {
             x1=x2=(-b+(sqrt(DELTA)))/(2*a);
             printf("x0=x1=x2 = %f\n",x1);
