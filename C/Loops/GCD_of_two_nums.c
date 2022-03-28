@@ -1,3 +1,6 @@
+/* is swapping numbers but
+do not work for all numbers */
+
 #include <stdio.h>
 
 int main()
@@ -26,14 +29,6 @@ int main()
     printf("%d\n\n",e);
 
     printf("GCD = %d\n",d);
-
-    /*do {
-    c=a%b;
-    a=b;
-    b=c;
-    }
-    while(b==0);
-    printf("%d\n",a);*/
 
     return 0;
 }
