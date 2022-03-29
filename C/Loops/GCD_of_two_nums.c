@@ -22,13 +22,19 @@ int main()
     }
 
     c=a%b;
-    printf("%d\n",c);
+    //printf("%d\n",c);
     d=b%c;
-    printf("%d\n",d);
-    e=c%d;
-    printf("%d\n\n",e);
+    //printf("%d\n",d);
 
-    printf("GCD = %d\n",d);
+    if (d==0) {
+        printf("\nGCD = %d\n",c);
+        }
+    else
+    {
+        e=c%d;
+        //printf("%d\n\n",e);
+        printf("\nGCD = %d\n",d);
+    }
 
     return 0;
 }
