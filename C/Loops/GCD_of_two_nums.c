@@ -1,18 +1,17 @@
-/* is swapping numbers but
-do not work for all numbers */
+/* do not work for all numbers */
 
 #include <stdio.h>
 
 int main()
 {
-    int a,b,c,d;
+    int a,b,c,d,e,f,g;
 
     printf("Type A: ");
     scanf("%d",&a);
     printf("Type B: ");
     scanf("%d",&b);
 
-    //swap "a" with "b" if a<b
+    // swap "a" with "b" if a<b
     if (a<b)
     {
         int temp=a;
@@ -20,24 +19,30 @@ int main()
         b=temp;
     }
 
-    do {
     c=a%b;
+    d=b%c;
+    e=c%d;
+    f=d%e;
+    g=e%f;
 
     if (c==0) {
         printf("\nGCD = %d\n",b);
-        break;
         }
-    else {
-        //The problem is with 4 lines below...
-        //...inside "else" statement.
-        int temp=b;
-        a=temp;
-        b=c;
-        d=a%b;
+    else if (d==0) {
+        printf("\nGCD = %d\n",c);
+        }
+    else if (e==0) {
         printf("\nGCD = %d\n",d);
         }
-    }
-    while (d==0);
+    else if (f==0) {
+        printf("\nGCD = %d\n",e);
+        }
+    else if (g==0) {
+        printf("\nGCD = %d\n",f);
+        }
+    else {
+        printf("\nGCD = %d\n",g);
+        }
 
     return 0;
 }
