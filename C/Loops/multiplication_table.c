@@ -1,4 +1,4 @@
-/*Multiplication Table*/
+/* Multiplication Table */
 
 #include <stdio.h>
 
