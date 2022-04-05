@@ -25,21 +25,23 @@ int main()
     if (n1==n2) {
         printf("\nLCM = %d\n",n1);
     }
-
+    // works only for 1 iteration back, no more
     else {
         for (int k=1; k<=n1; k++)
         {
-                n=k*n1;
-                //printf("%d\n",n);
+            n=k*n1;
+            //printf("%d\n",n);
 
-                if (n==m)
-                {
-                    printf("\nLCM = %d\n",n);
-                    break;
-                }
+            if (n==m) {
+                printf("\nLCM = %d\n",n);
+                break;
+            }
 
+            for (int i=1; i<=n2; i++)
+            {
                 m=k*n2;
                 //printf("%d\n", m);
+            }
         }
     }
     return 0;
