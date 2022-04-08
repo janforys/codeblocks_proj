@@ -4,7 +4,7 @@
 
 int main()
 {
-    int k,j=1;
+    int k;
 
     do  {
         printf("Define size of the table (greater than 0): ");
@@ -13,7 +13,7 @@ int main()
     while (k<=0);
 
     //generates multiplication table
-    for (j; j<=k; j++)
+    for (int j=1; j<=k; j++)
     {
         printf("%d x %d = %d\n",j,k,k*j);
     }
