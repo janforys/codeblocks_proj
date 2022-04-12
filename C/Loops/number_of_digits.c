@@ -1,18 +1,22 @@
+/* Program to count digits of a
+number, which user enters */
+
 #include <stdio.h>
 
 int main()
 {
+    float user_number;
+    int number_of_digits=0;
 
-int a,n=0,
-scanf("%d",&a);
+    printf("Enter a number: ");
+    scanf("%f", &user_number);
 
-do {
-a=a/10;
-n++
-} while (a<1)
+    do {
+        user_number = user_number / 10;
+        number_of_digits++;
+    } while (user_number>=1);
 
-printf("%d",n);
+    printf("\n%d is a number of digits in your value.\n", number_of_digits);
 
-return 0;
-
+    return 0;
 }
