@@ -1,4 +1,4 @@
-/* Program to count digits of a
+/* C Program to count digits of a
 number, which user enters */
 
 #include <stdio.h>
@@ -12,7 +12,7 @@ int main()
     scanf("%f", &user_number);
 
     do {
-        user_number = user_number / 10;
+        user_number /= 10;
         number_of_digits++;
     } while (user_number>=1);
 
