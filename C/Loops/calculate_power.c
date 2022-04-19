@@ -4,19 +4,20 @@
 
 int main()
 {
-    int b,p,x=1,z,r;
+    double base, power_factor, result=1;
 
-    scanf("%d%d",&b,&p);
-    b=b*b;
+    printf("BASE: ");
+    scanf("%lf", &base);
 
-    while(x<=p)
+    printf("POWER: ");
+    scanf("%lf", &power_factor);
+
+    for (double k; k<power_factor; k++)
     {
-        r=b*z;
-        x++;
-        z++;
+        result*=base;
     }
 
-    printf("\n%d\n",r);
+    printf("\nRESULT: %lf\n", result);
 
     return 0;
 }
