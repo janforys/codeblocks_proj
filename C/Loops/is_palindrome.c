@@ -1,3 +1,5 @@
+/* C Program to check if sentence is palindrom or it is not */
+
 #include <stdio.h>
 
 int main()
