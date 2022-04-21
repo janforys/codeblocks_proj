@@ -5,20 +5,26 @@
 int main()
 {
 
-int n,p;
-scanf("%d",&n);
+    int n,p,x;
+    printf("Enter number to check: ");
+    scanf("%d",&n);
+    printf("\nYou've entered %d...", n);
 
-do {
-p=n%10; //reverse n
-n=n/10;
-printf("%d",p);
-} while(n>=1);
+    // reverse n
+    do {
+        p=n%10;
+        n=n/10;
+        printf("%d",p);
+        x=p;
+    } while (n>=1);
 
-//check if n is equal to p
-if(n=/p) {
-printf("is not a palindrome");
-}
-printf("it is");
+    printf("\n\n%d\n", x); // show "p"(x)
+
+    // check if n is not equal to p
+    if (n/=p) {
+        printf("\n ...and it is not a palindrome.\n\n");
+    }
+        printf("\n ...and it is palindrome number.\n\n");
 
 return 0;
 }
