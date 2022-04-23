@@ -16,15 +16,16 @@ int main()
     do {
 
         p=n%10;
+        x=x*10+p;
         n=n/10;
         printf("%d",p);
-        //p=p+p;
+        
     } while (n>=1);
 
-    printf("\n\n%d\n%d\n", m, p); // show p and m(n)
+    printf("\n\n%d\n%d\n", m, x); // show x and m(n)
 
-    // check if n is not equal to p
-    if (m/=p) {
+    // check if n is not equal to x
+    if (m/=x) {
         printf("\n ...and it is not a palindrome.\n\n");
     }
         printf("\n ...and it is palindrome number.\n\n");
