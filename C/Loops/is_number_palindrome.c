@@ -18,17 +18,22 @@ int main()
         p=n%10;
         x=x*10+p;
         n=n/10;
-        printf("%d",p);
-        
+        //printf("%d",p);
+
     } while (n>=1);
 
-    printf("\n\n%d\n%d\n", m, x); // show x and m(n)
+    int z=10;
+    printf("\n\n%d\n", m);
+    printf("\n%d\n", x); // show x and m(n)
+    //printf("\n%d + %d = %d\n", x,z,x+z);
 
     // check if n is not equal to x
-    if (m/=x) {
+    if (m!=x) {
         printf("\n ...and it is not a palindrome.\n\n");
     }
+    else {
         printf("\n ...and it is palindrome number.\n\n");
+    }
 
 return 0;
 }
