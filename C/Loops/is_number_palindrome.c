@@ -5,30 +5,24 @@
 int main()
 {
 
-    int n,p,x;
+    int number_to_check, reverse, temp_1=0;
+
     printf("Enter number to check: ");
-    scanf("%d",&n);
-    printf("\nYou've entered %d...", n);
+    scanf("%d", &number_to_check);
+    printf("\nYou've entered %d...\n", number_to_check);
 
-    int m=n;
+    int temp_2 = number_to_check;
 
-    // reverse n
+    // reverse number to check
     do {
+        reverse = number_to_check % 10;
+        temp_1 = temp_1 * 10 + reverse;
+        number_to_check = number_to_check / 10;
 
-        p=n%10;
-        x=x*10+p;
-        n=n/10;
-        //printf("%d",p);
+    } while (number_to_check >= 1);
 
-    } while (n>=1);
-
-    int z=10;
-    printf("\n\n%d\n", m);
-    printf("\n%d\n", x); // show x and m(n)
-    //printf("\n%d + %d = %d\n", x,z,x+z);
-
-    // check if n is not equal to x
-    if (m!=x) {
+    // check if number to check is not equal to reverse (temp_1)
+    if (temp_2 != temp_1) {
         printf("\n ...and it is not a palindrome.\n\n");
     }
     else {
