@@ -17,7 +17,7 @@ int main()
     do {
         reverse = number_to_check % 10;
         temp_1 = temp_1 * 10 + reverse;
-        number_to_check = number_to_check / 10;
+        number_to_check /= 10;
 
     } while (number_to_check >= 1);
 
