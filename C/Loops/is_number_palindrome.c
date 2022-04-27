@@ -21,7 +21,7 @@ int main()
 
     } while (number_to_check >= 1);
 
-    // check if number to check is not equal to reverse (temp_1)
+    // check if "number_to_check" is not equal to reverse (temp_1)
     if (temp_2 != temp_1) {
         printf("\n ...and it is not a palindrome.\n\n");
     }
