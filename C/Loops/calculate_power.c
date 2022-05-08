@@ -4,7 +4,7 @@
 
 int main()
 {
-    double base, power_factor, result=1;
+    double base, power_factor, result = 1;
 
     printf("BASE: ");
     scanf("%lf", &base);
@@ -12,9 +12,9 @@ int main()
     printf("POWER: ");
     scanf("%lf", &power_factor);
 
-    for (double k; k<power_factor; k++)
+    for (double k; k < power_factor; k++)
     {
-        result*=base;
+        result *= base;
     }
 
     printf("\nRESULT: %lf\n", result);

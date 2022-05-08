@@ -9,45 +9,46 @@
    Sum powered digits.
    Compare result with number entered by a user.
 
-   e.g.: abcd... = a^n + b^n + c^n + d^n + */
+   e.g.: abcd... = a^n + b^n + c^n + d^n +  */
+
 
 #include <stdio.h>
 
 int main()
 {
     // Declare variables
-    int num_to_check, digit, power_factor;
+    int num_to_check, digit, power_factor, digit_sum;
 
     printf("Enter positive number: ");
     scanf("%d", &num_to_check);
-
-    // Counting power factor (n)
-    /*int a = num_to_check;
-    while (a >= 1) {
-        a /= 10;
-        power_factor++;
-    }*/
+    int check = num_to_check;
 
     // Counting power factor (n)
     for (int a = num_to_check; a >= 1; a /= 10) {
         power_factor++;
     }
-    printf("POWER FACTOR = %d\n", power_factor);
 
-    // some comment
+    // Digitize number
     while (num_to_check >= 1) {
         digit = num_to_check % 10;
-        printf("%d\n", digit);
-
-            int digit2;
-            for (int i=0; i <= power_factor; i++)
-            {
-                digit2 = digit * i;
-            }
-            printf("%d\n\n", digit2);
-
         num_to_check /= 10;
+
+            // Raise to power
+            int power_result = 1;
+            for (int i=1; i <= power_factor; i++) {
+                power_result *= digit;
+            }
+
+            // Summarize powered digits
+            digit_sum += power_result;
     }
 
-return 0;
+    // Comparing results
+    if (digit_sum == check) {
+        printf("[ A R M S T R O N G ]\n");
+    } else {
+        printf("To nie jest ta liczba. Szukaj szczescia dalej.\n");
+    }
+
+    return 0;
 }
