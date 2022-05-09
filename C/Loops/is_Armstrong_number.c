@@ -33,7 +33,7 @@ int main()
         digit = num_to_check % 10;
         num_to_check /= 10;
 
-            // Raise to power
+            // Raise each digit to power
             int power_result = 1;
             for (int i=1; i <= power_factor; i++) {
                 power_result *= digit;
