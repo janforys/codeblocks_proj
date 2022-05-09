@@ -47,7 +47,7 @@ int main()
     if (digit_sum == check) {
         printf("[ A R M S T R O N G ]\n");
     } else {
-        printf("To nie jest ta liczba. Szukaj szczescia dalej.\n");
+        printf("This is not that number. Keep looking for your luck.\n");
     }
 
     return 0;
