@@ -3,7 +3,7 @@
    User enters two numbers.
    Those numbers define an interval.
    Program need to check if there are some Armstrong numbers
-   in an interval mentioned earlier.
+   in mentioned interval.
 
    Armstrong number:
    e.g.: abcd... = a^n + b^n + c^n + d^n +  */
@@ -16,7 +16,7 @@ int main()
     // Declare global variables
     int interval_1, interval_2;
 
-    printf("Enter two positive numbers which will define an interval: ");
+    printf("Enter two positive numbers which will define an interval: \n");
     scanf("%d%d", &interval_1, &interval_2);
 
     // Swap inputs if first is greater than second
@@ -26,12 +26,12 @@ int main()
         interval_2 = temp;
     }
 
-    while (interval_1 < interval_2)
+    while (interval_1 < interval_2 - 1)
     {
         int num_to_check, power_factor, digit, digit_sum;
         interval_1++;
+        digit_sum = 0, power_factor = 0; // reset values
         num_to_check = interval_1;
-        printf("%d\n", num_to_check);
 
         // Counting power factor (n)
         for (int a = num_to_check; a >= 1; a /= 10) {
@@ -40,6 +40,7 @@ int main()
 
         // Digitize number
         while (num_to_check >= 1) {
+
             digit = num_to_check % 10;
             num_to_check /= 10;
 
@@ -53,13 +54,8 @@ int main()
                 digit_sum += power_result;
         }
 
-        // Displaying results
-        if (digit_sum == interval_1) {
-            printf("YEEE: %d, ", digit_sum);
-        // if "1" print "else"
-        } else {
-            printf("There aren't any Armstrong numbers.\n");
-        }
+        // TODO: Displaying results
+        printf("\n%d\n", digit_sum);
     }
 
     return 0;
