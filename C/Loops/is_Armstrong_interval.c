@@ -14,7 +14,7 @@
 int main()
 {
     // Declare global variables
-    int interval_1, interval_2;
+    int interval_1, interval_2, flag = 1;
 
     printf("Enter two positive numbers which will define an interval: \n");
     scanf("%d%d", &interval_1, &interval_2);
@@ -26,11 +26,11 @@ int main()
         interval_2 = temp;
     }
 
+    // Loop to verify each value from an interval
     while (interval_1 < interval_2 - 1)
     {
-        int num_to_check, power_factor, digit, digit_sum;
+        int num_to_check, digit, power_factor = 0, digit_sum = 0;
         interval_1++;
-        digit_sum = 0, power_factor = 0; // reset values
         num_to_check = interval_1;
 
         // Counting power factor (n)
@@ -54,8 +54,15 @@ int main()
                 digit_sum += power_result;
         }
 
-        // TODO: Displaying results
-        printf("\n%d\n", digit_sum);
+        // Displaying results
+        if (digit_sum == interval_1) {
+            printf("\nThe Armstrong number in given interval: %d .\n", interval_1);
+            flag = 0;
+        }
+    }
+
+    if (flag == 1) {
+        printf("\nThere are no Armstrong numbers...\n");
     }
 
     return 0;
