@@ -16,17 +16,20 @@ int main()
     scanf("%f%f", &x, &y);
 
     switch (sign) {
-        case '+': printf("Outcome: %f\n", x + y);
+        case '+': printf("Outcome: %.2f\n", x + y);
         break;
 
-        case '-': printf("Outcome: %f\n", x - y);
+        case '-': printf("Outcome: %.2f\n", x - y);
         break;
 
-        case '*': printf("Outcome: %f\n", x * y);
+        case '*': printf("Outcome: %.2f\n", x * y);
         break;
 
-        case '/': printf("Outcome: %f\n", x / y);
+        case '/': printf("Outcome: %.2f\n", x / y);
         break;
+
+        // if user enters something else
+        default: printf("Wrong operator!\n");
     }
 
 return 0;
