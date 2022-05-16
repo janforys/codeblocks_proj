@@ -5,25 +5,27 @@
 
 int main()
 {
-    int a;
 
-    printf("Type 2 numbers to calculate: \n");
-    scanf("%d", &a);
+    float x, y;
+    char sign;
 
-    switch(a) {
-        case 1:
+    printf("Choose operation type ( +, -, *, / ): \n");
+    scanf("%c", &sign);
+
+    printf("Enter two numbers to calculate: \n");
+    scanf("%f%f", &x, &y);
+
+    switch (sign) {
+        case '+': printf("Outcome: %f\n", x + y);
         break;
 
-        case 2:
-        printf("+\n");
+        case '-': printf("Outcome: %f\n", x - y);
         break;
 
-        case 3:
-        printf("-\n");
+        case '*': printf("Outcome: %f\n", x * y);
         break;
 
-        case 4:
-        printf("*\n");
+        case '/': printf("Outcome: %f\n", x / y);
         break;
     }
 
