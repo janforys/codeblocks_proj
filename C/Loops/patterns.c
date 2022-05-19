@@ -22,23 +22,20 @@ int main()
     switch (example) {
 
         case 1: printf("[ Half pyramid of * ]\n");
-                int stars, rows;
+                int row, col = 1;
                 printf("How many stars ?: ");
-                scanf("%d", &stars);
-                rows = stars;
-                int col = rows;
+                scanf("%d", &row);
                 printf("\n");
 
-                // Rows (stars) iterator
-                for (int i = 0; i < rows; i++) {
+                // Row iterator
+                for (int k = 0; k < row; k++) {
                         // Column iterator
                         for (int j = 0; j < col; j++) {
                             printf("* ");
                             }
                         printf("\n");
+                        col++;
                     }
-
-                //printf("\n");
                 break;
 
         case 2: printf("[ Half pyramid of numbers ]\n");
