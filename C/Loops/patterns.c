@@ -1,5 +1,7 @@
 /* C Program to Print Pyramids and Patterns */
 
+/* Author: Jan Forys 2022 */
+
 /* Switch..case statement with different program choose
    options:
    Half pyramid of *, Half pyramid of numbers, Half
@@ -22,24 +24,42 @@ int main()
     switch (example) {
 
         case 1: printf("[ Half pyramid of * ]\n");
-                int row, col = 1;
+                int star_row, star_col = 1;
                 printf("How many stars ?: ");
-                scanf("%d", &row);
+                scanf("%d", &star_row);
                 printf("\n");
 
                 // Row iterator
-                for (int k = 0; k < row; k++) {
+                for (int k = 0; k < star_row; k++) {
                         // Column iterator
-                        for (int j = 0; j < col; j++) {
-                            printf("* ");
+                        for (int j = 0; j < star_col; j++) {
+                                printf("* ");
                             }
                         printf("\n");
-                        col++;
+                        star_col++;
                     }
                 break;
 
+
         case 2: printf("[ Half pyramid of numbers ]\n");
+                int num_row, num_col = 1;
+                printf("How many numbers ?: ");
+                scanf("%d", &num_row);
+                printf("\n");
+
+                // Row iterator
+                for (int k = 0; k < num_row; k++) {
+                        int num = 0;
+                        // Column iterator
+                        for (int j = 0; j < num_col; j++) {
+                                num++;
+                                printf("%d ", num);
+                            }
+                        printf("\n");
+                        num_col++;
+                    }
                 break;
+
 
         case 3: printf("[ Half pyramid of alphabets ]\n");
                 break;
