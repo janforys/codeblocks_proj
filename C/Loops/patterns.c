@@ -62,21 +62,20 @@ int main()
 
 
         case 3: printf("[ Half pyramid of alphabets ]\n");
-                int alpha_row, alpha_col = 1;
+                int alpha_row, alpha_col = 1, letter = 65;
                 printf("How many letters ?: ");
                 scanf("%d", &alpha_row);
                 printf("\n");
 
                 // Row iterator
                 for (int k = 0; k < alpha_row; k++) {
-                        int letter = 65;
-                        // Column iterator
+                    // Column iterator
                         for (int j = 0; j < alpha_col; j++) {
-                                letter++;
                                 printf("%c ", letter);
                             }
                         printf("\n");
                         alpha_col++;
+                        letter++;
                     }
                 break;
 
