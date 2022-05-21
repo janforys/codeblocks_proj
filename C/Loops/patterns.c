@@ -81,7 +81,23 @@ int main()
 
 
         case 4: printf("[ Inverted half pyramid of * ]\n");
+                int inv_star_row, inv_star_col;
+                printf("How many stars ?: ");
+                scanf("%d", &inv_star_row);
+                printf("\n");
+                inv_star_col = inv_star_row;
+
+                // Row iterator
+                for (int k = 0; k < inv_star_row; k++) {
+                    // Column iterator
+                        for (int j = inv_star_col; j >= 1; j--) {
+                            printf("* ");
+                        }
+                        printf("\n");
+                        inv_star_col--;
+                    }
                 break;
+
 
         case 5: printf("[ Inverted half pyramid of numbers ]\n");
                 break;
