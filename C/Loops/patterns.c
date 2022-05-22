@@ -91,8 +91,8 @@ int main()
                 for (int k = 0; k < inv_star_row; k++) {
                     // Column iterator
                         for (int j = inv_star_col; j >= 1; j--) {
-                            printf("* ");
-                        }
+                                printf("* ");
+                            }
                         printf("\n");
                         inv_star_col--;
                     }
@@ -100,7 +100,25 @@ int main()
 
 
         case 5: printf("[ Inverted half pyramid of numbers ]\n");
+                int inv_num_row, inv_num_col;
+                printf("How many numbers ?: ");
+                scanf("%d", &inv_num_row);
+                printf("\n");
+                inv_num_col = inv_num_row;
+
+                // Row iterator
+                for (int k = 0; k < inv_num_row; k++) {
+                        int num = 0;
+                        // Column iterator
+                        for (int j = 0; j < inv_num_col; j++) {
+                                num++;
+                                printf("%d ", num);
+                            }
+                        printf("\n");
+                        inv_num_col--;
+                    }
                 break;
+
 
         case 6: printf("[ Full pyramid of * ]\n");
                 break;
