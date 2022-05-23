@@ -125,15 +125,20 @@ int main()
                 printf("How many stars ?: ");
                 scanf("%d", &full_star_row);
                 printf("\n");
+                full_star_col = full_star_row;
 
                 // Row iterator
                 for (int k = 0; k < full_star_row; k++) {
+                    for (int m = 0; m <= full_star_row / 2; m++) {
+                                    printf(" ");
+                                }
                         // Column iterator
-                        for (int j = 0; j < full_star_col; j++) {
+                        for (int j = full_star_col; j >= 1; j--) {
                                 printf("* ");
+
                             }
                         printf("\n");
-                        full_star_col++;
+                        full_star_col--;
                     }
                 break;
 
