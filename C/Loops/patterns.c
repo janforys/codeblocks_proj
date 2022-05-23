@@ -24,57 +24,57 @@ int main()
     switch (example) {
 
         case 1: printf("[ Half pyramid of * ]\n");
-                int star_row, star_col = 1;
+                int half_star_row, half_star_col = 1;
                 printf("How many stars ?: ");
-                scanf("%d", &star_row);
+                scanf("%d", &half_star_row);
                 printf("\n");
 
                 // Row iterator
-                for (int k = 0; k < star_row; k++) {
+                for (int k = 0; k < half_star_row; k++) {
                         // Column iterator
-                        for (int j = 0; j < star_col; j++) {
+                        for (int j = 0; j < half_star_col; j++) {
                                 printf("* ");
                             }
                         printf("\n");
-                        star_col++;
+                        half_star_col++;
                     }
                 break;
 
 
         case 2: printf("[ Half pyramid of numbers ]\n");
-                int num_row, num_col = 1;
+                int half_num_row, half_num_col = 1;
                 printf("How many numbers ?: ");
-                scanf("%d", &num_row);
+                scanf("%d", &half_num_row);
                 printf("\n");
 
                 // Row iterator
-                for (int k = 0; k < num_row; k++) {
+                for (int k = 0; k < half_num_row; k++) {
                         int num = 0;
                         // Column iterator
-                        for (int j = 0; j < num_col; j++) {
+                        for (int j = 0; j < half_num_col; j++) {
                                 num++;
                                 printf("%d ", num);
                             }
                         printf("\n");
-                        num_col++;
+                        half_num_col++;
                     }
                 break;
 
 
         case 3: printf("[ Half pyramid of alphabets ]\n");
-                int alpha_row, alpha_col = 1, letter = 65;
+                int half_alpha_row, half_alpha_col = 1, letter = 65;
                 printf("How many letters ?: ");
-                scanf("%d", &alpha_row);
+                scanf("%d", &half_alpha_row);
                 printf("\n");
 
                 // Row iterator
-                for (int k = 0; k < alpha_row; k++) {
+                for (int k = 0; k < half_alpha_row; k++) {
                     // Column iterator
-                        for (int j = 0; j < alpha_col; j++) {
+                        for (int j = 0; j < half_alpha_col; j++) {
                                 printf("%c ", letter);
                             }
                         printf("\n");
-                        alpha_col++;
+                        half_alpha_col++;
                         letter++;
                     }
                 break;
@@ -121,7 +121,22 @@ int main()
 
 
         case 6: printf("[ Full pyramid of * ]\n");
+                int full_star_row, full_star_col = 1;
+                printf("How many stars ?: ");
+                scanf("%d", &full_star_row);
+                printf("\n");
+
+                // Row iterator
+                for (int k = 0; k < full_star_row; k++) {
+                        // Column iterator
+                        for (int j = 0; j < full_star_col; j++) {
+                                printf("* ");
+                            }
+                        printf("\n");
+                        full_star_col++;
+                    }
                 break;
+
 
         case 7: printf("[ Full pyramid of numbers ]\n");
                 break;
