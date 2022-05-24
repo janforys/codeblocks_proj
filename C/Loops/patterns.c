@@ -31,9 +31,9 @@ int main()
                 printf("\n");
 
                 // Row iterator
-                for (int k = 0; k < half_star_row; k++) {
+                for (int r = 0; r < half_star_row; r++) {
                         // Column iterator
-                        for (int j = 0; j <= half_star_col; j++) {
+                        for (int c = 0; c <= half_star_col; c++) {
                                 printf("* ");
                             }
                         printf("\n");
@@ -50,10 +50,10 @@ int main()
                 printf("\n");
 
                 // Row iterator
-                for (int k = 0; k < half_num_row; k++) {
+                for (int r = 0; r < half_num_row; r++) {
                         int num = 0;
                         // Column iterator
-                        for (int j = 0; j <= half_num_col; j++) {
+                        for (int c = 0; c <= half_num_col; c++) {
                                 num++;
                                 printf("%d ", num);
                             }
@@ -71,9 +71,9 @@ int main()
                 printf("\n");
 
                 // Row iterator
-                for (int k = 0; k < half_alpha_row; k++) {
+                for (int r = 0; r < half_alpha_row; r++) {
                     // Column iterator
-                        for (int j = 0; j <= half_alpha_col; j++) {
+                        for (int c = 0; c <= half_alpha_col; c++) {
                                 printf("%c ", letter);
                             }
                         printf("\n");
@@ -92,9 +92,9 @@ int main()
                 inv_star_col = inv_star_row;
 
                 // Row iterator
-                for (int k = 0; k < inv_star_row; k++) {
+                for (int r = 0; r < inv_star_row; r++) {
                     // Column iterator
-                        for (int j = inv_star_col; j >= 1; j--) {
+                        for (int c = inv_star_col; c >= 1; c--) {
                                 printf("* ");
                             }
                         printf("\n");
@@ -112,10 +112,10 @@ int main()
                 inv_num_col = inv_num_row;
 
                 // Row iterator
-                for (int k = 0; k < inv_num_row; k++) {
+                for (int r = 0; r < inv_num_row; r++) {
                         int num = 0;
                         // Column iterator
-                        for (int j = 0; j < inv_num_col; j++) {
+                        for (int c = 0; c < inv_num_col; c++) {
                                 num++;
                                 printf("%d ", num);
                             }
