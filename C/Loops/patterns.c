@@ -126,7 +126,33 @@ int main()
 
 
         case 6: printf("[ Full pyramid of * ]\n");
+
+                int full_star_row, full_star_col = 0;
+                printf("How many stars ?: ");
+                scanf("%d", &full_star_row);
+                printf("\n");
+
+                int indentation_1 = full_star_row;
+
+                // Row iterator
+                for (int r = 0; r < full_star_row; r++) {
+                int p = indentation_1;
+
+                        while (p >= 2) {
+                            printf(" ");
+                            p--;
+                        }
+                            // Column iterator
+                            for (int c = 0; c <= full_star_col; c++) {
+                                    printf("* ");
+                                }
+
+                        printf("\n");
+                        full_star_col++;
+                        indentation_1--;
+                    }
                 break;
+
 
         case 7: printf("[ Full pyramid of numbers ]\n");
                 break;
@@ -137,6 +163,7 @@ int main()
                 printf("How many stars ?: ");
                 scanf("%d", &inv_full_star_row);
                 printf("\n");
+
                 inv_full_star_col = inv_full_star_row;
 
                 // Row iterator
@@ -148,13 +175,13 @@ int main()
                             }
 
                         printf("\n");
-                        inv_full_star_col -= 2;
-                        indentation += 2;
+                        inv_full_star_col--;
+                        indentation++;
 
                             while (p < indentation) {
-                                    printf(" ");
-                                    p++;
-                                }
+                                printf(" ");
+                                p++;
+                            }
                     }
                 break;
 
