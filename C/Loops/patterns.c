@@ -155,7 +155,34 @@ int main()
 
 
         case 7: printf("[ Full pyramid of numbers ]\n");
+                int full_num_row, full_num_col = 0;
+                printf("How many rows ?: ");
+                scanf("%d", &full_num_row);
+                printf("\n");
+
+                int indentation_2 = full_num_row;
+
+                // Row iterator
+                for (int r = 0; r < full_num_row; r++) {
+                int p = indentation_2, num = 0;
+
+                        while (p >= -2) {
+                            printf(" ");
+                            p--;
+                        }
+                            // Column iterator
+                            for (int c = 0; c <= full_num_col; c++) {
+                                    num++;
+                                    printf("%d ", num);
+                                }
+
+                        printf("\n");
+                        full_num_col += 2;
+                        indentation_2 -= 2;
+
+                    }
                 break;
+
 
         case 8: printf("[ Inverted full pyramid of * ]\n");
 
