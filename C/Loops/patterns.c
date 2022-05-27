@@ -89,6 +89,7 @@ int main()
                 printf("How many stars ?: ");
                 scanf("%d", &inv_star_row);
                 printf("\n");
+
                 inv_star_col = inv_star_row;
 
                 // Row iterator
@@ -109,6 +110,7 @@ int main()
                 printf("How many numbers ?: ");
                 scanf("%d", &inv_num_row);
                 printf("\n");
+
                 inv_num_col = inv_num_row;
 
                 // Row iterator
@@ -155,31 +157,40 @@ int main()
 
 
         case 7: printf("[ Full pyramid of numbers ]\n");
-                int full_num_row, full_num_col = 0;
+
+                int full_num_row, full_num_col = 0, num2 = 1;
                 printf("How many rows ?: ");
                 scanf("%d", &full_num_row);
                 printf("\n");
 
-                int indentation_2 = full_num_row;
+                int indent = full_num_row;
 
                 // Row iterator
                 for (int r = 0; r < full_num_row; r++) {
-                int p = indentation_2, num = 0;
+                        //int num = 1;
+                        int num = num2;
 
-                        while (p >= -2) {
-                            printf(" ");
-                            p--;
-                        }
-                            // Column iterator
-                            for (int c = 0; c <= full_num_col; c++) {
-                                    num++;
-                                    printf("%d ", num);
-                                }
+                        for (int i = 1; i < indent; i++) {
+                                printf("  ");
+                            }
+
+                        // Column iterator1
+                       /* for (int c1 = 0; c1 <= full_num_col; c1++) {
+                                printf("%d ", num);
+                                num++;
+                            }*/
+
+                        // Column iterator
+                        for (int c = 0; c <= full_num_col; c++) {
+                                //printf("x ");
+                                printf("%d ", num);
+                                num--;
+                            }
 
                         printf("\n");
-                        full_num_col += 2;
-                        indentation_2 -= 2;
-
+                        full_num_col++;
+                        num2 += 2;
+                        indent--;
                     }
                 break;
 
