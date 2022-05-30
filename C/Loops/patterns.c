@@ -220,7 +220,27 @@ int main()
 
 
         case 9: printf("[ Pascal's Triangle ]\n");
+
+                char space = ' ';
+                int row, column, a = 1;
+                printf("How many rows? ");
+                scanf("%d", &row);
+                printf("\n");
+
+                // Row iterator
+                for (int r = row; r > 0; r--) {
+
+                    // Indentation (space)
+                    for (int s = r; s > 1; s--) {
+                            printf("%c", space);
+                        }
+
+                        printf("%d \n", a);
+
+                    }
+
                 break;
+
 
         case 10: printf("[ Floyd's Triangle ]\n");
                  break;
