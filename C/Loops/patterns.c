@@ -36,6 +36,7 @@ int main()
                         for (int c = 0; c <= half_star_col; c++) {
                                 printf("* ");
                             }
+
                         printf("\n");
                         half_star_col++;
                     }
@@ -57,6 +58,7 @@ int main()
                                 num++;
                                 printf("%d ", num);
                             }
+
                         printf("\n");
                         half_num_col++;
                     }
@@ -76,6 +78,7 @@ int main()
                         for (int c = 0; c <= half_alpha_col; c++) {
                                 printf("%c ", letter);
                             }
+
                         printf("\n");
                         half_alpha_col++;
                         letter++;
@@ -98,6 +101,7 @@ int main()
                         for (int c = inv_star_col; c >= 1; c--) {
                                 printf("* ");
                             }
+
                         printf("\n");
                         inv_star_col--;
                     }
@@ -121,6 +125,7 @@ int main()
                                 num++;
                                 printf("%d ", num);
                             }
+
                         printf("\n");
                         inv_num_col--;
                     }
@@ -138,16 +143,16 @@ int main()
 
                 // Row iterator
                 for (int r = 0; r < full_star_row; r++) {
-                int p = indentation_1;
+                    int p = indentation_1;
 
                         while (p >= 2) {
-                            printf(" ");
-                            p--;
-                        }
-                            // Column iterator
-                            for (int c = 0; c <= full_star_col; c++) {
-                                    printf("* ");
-                                }
+                                printf(" ");
+                                p--;
+                            }
+                        // Column iterator
+                        for (int c = 0; c <= full_star_col; c++) {
+                                printf("* ");
+                            }
 
                         printf("\n");
                         full_star_col++;
@@ -222,28 +227,35 @@ int main()
         case 9: printf("[ Pascal's Triangle ]\n");
 
                 char space = ' ';
-                int row, column, a = 1;
+                int row, column = -1, a = 1;
                 printf("How many rows? ");
                 scanf("%d", &row);
                 printf("\n");
 
                 // Row iterator
                 for (int r = row; r > 0; r--) {
+                        // Indentation (space)
+                        for (int s = r; s > 1; s--) {
+                                printf("%c", space);
+                            }
+                        printf("%d", a);
 
-                    // Indentation (space)
-                    for (int s = r; s > 1; s--) {
-                            printf("%c", space);
-                        }
-
-                        printf("%d \n", a);
-
+                        // Indentation between ones (column iterator)
+                        for (int c = 1; c <= column; c++) {
+                                printf("%c", space);
+                                    if (c == column) {
+                                        printf("%d", a);
+                                    }
+                            }
+                        printf("\n");
+                        column += 2;
                     }
-
                 break;
 
 
         case 10: printf("[ Floyd's Triangle ]\n");
                  break;
+
 
         default: printf("Choose another\n");
                  goto label;
