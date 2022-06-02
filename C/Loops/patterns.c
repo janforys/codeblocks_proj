@@ -227,7 +227,7 @@ int main()
         case 9: printf("[ Pascal's Triangle ]\n");
 
                 char space = ' ';
-                int row, column = -1, a = 1;
+                int row, column = -1, a = 1, b = 1;
                 printf("How many rows? ");
                 scanf("%d", &row);
                 printf("\n");
@@ -240,13 +240,21 @@ int main()
                             }
                         printf("%d", a);
 
-                        // Indentation between ones (column iterator)
+                        // Numbers between ones (column iterator)
                         for (int c = 1; c <= column; c++) {
-                                printf("%c", space);
-                                    if (c == column) {
-                                        printf("%d", a);
-                                    }
+
+                                if (r <= row - 2 && c == 1) {
+                                    b++;
+                                    printf(" %d", b);
+                                }
+                                if (r <= row - 3 && c == 1) {
+                                    printf(" %d", b);
+                                }
+                                if (c == column) {
+                                    printf(" %d", a);
+                                }
                             }
+
                         printf("\n");
                         column += 2;
                     }
