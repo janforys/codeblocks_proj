@@ -11,14 +11,14 @@ int main()
     //help of loop.
     // Simply check by using loop that it divides by other numbers :)
 
-    int user_num, temp=0;
+    int user_num, temp = 0;
 
     // Enter number
     printf("Enter a positive number: ");
     scanf("%d", &user_num);
 
     // Check if it divides by other than itself and 1
-    for (int x=2; x < user_num; x++) {
+    for (int x = 2; x < user_num; x++) {
 
         if (user_num % x == 0) {
             temp = 1;
