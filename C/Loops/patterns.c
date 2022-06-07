@@ -233,26 +233,24 @@ int main()
                 printf("\n");
 
                 // Row iterator
-                for (int r = row; r > 0; r--) {
+                for (int r = 0; r < row; r++) {
+                    int r_factorial = 1;
                         // Indentation (space)
-                        for (int s = r; s > 1; s--) {
+                        for (int s = r; s < row - 1; s++) {
                                 printf("%c", space);
                             }
                         printf("%d", a);
 
+                        for (int count = 1; count <= r; count++) {
+                                r_factorial *= count;
+                            }
+                        printf(" %d", r_factorial);
+
                         // Numbers between ones (column iterator)
                         for (int c = 1; c <= column; c++) {
-
-                                if (r <= row - 2 && c == 1) {
-                                    b++;
-                                    printf(" %d", b);
-                                }
-                                if (r <= row - 3 && c == 1) {
-                                    printf(" %d", b);
-                                }
                                 if (c == column) {
-                                    printf(" %d", a);
-                                }
+                                        printf(" %d", a);
+                                    }
                             }
 
                         printf("\n");
