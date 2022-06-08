@@ -227,34 +227,44 @@ int main()
         case 9: printf("[ Pascal's Triangle ]\n");
 
                 char space = ' ';
-                int row, column = -1, a = 1, b = 1;
+                int row, column = 0, a = 1;
                 printf("How many rows? ");
                 scanf("%d", &row);
                 printf("\n");
 
                 // Row iterator
-                for (int r = 0; r < row; r++) {
+                for (int r = 1; r <= row; r++) {
                     int r_factorial = 1;
+
                         // Indentation (space)
                         for (int s = r; s < row - 1; s++) {
                                 printf("%c", space);
                             }
-                        printf("%d", a);
+                        printf("%d ", a);
 
+                        // r!
                         for (int count = 1; count <= r; count++) {
                                 r_factorial *= count;
                             }
-                        printf(" %d", r_factorial);
+                        printf(" %d  ", r_factorial); // r!
 
-                        // Numbers between ones (column iterator)
-                        for (int c = 1; c <= column; c++) {
+                        // column iterator and c!
+                        for (int c = 0; c <= column; c++) {
+                            int c_factorial = 1;
+
+                                // c!
+                                for (int count = 1; count <= c + 1; count++) {
+                                        c_factorial *= count;
+                                    }
+                                printf(" %d", c_factorial); // c!
+
                                 if (c == column) {
-                                        printf(" %d", a);
+                                        printf("  %d", a); // '1' at the end
                                     }
                             }
 
                         printf("\n");
-                        column += 2;
+                        column ++;
                     }
                 break;
 
