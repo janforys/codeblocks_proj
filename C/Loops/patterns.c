@@ -246,17 +246,20 @@ int main()
                         for (int count = 1; count <= r; count++) {
                                 r_factorial *= count;
                             }
-                        printf(" %d  ", r_factorial); // r!
+                        //printf(" %d  ", r_factorial); // r!
 
-                        // column iterator and c!
-                        for (int c = 0; c <= column; c++) {
+                        // Column iterator
+                        for (int c = 1; c <= column; c++) {
                             int c_factorial = 1;
+                                // Difference between r and c (r-c)
+                                int difference = r - c;
+                                //printf(" %d ", difference);
 
                                 // c!
-                                for (int count = 1; count <= c + 1; count++) {
+                                for (int count = 1; count <= c; count++) {
                                         c_factorial *= count;
                                     }
-                                printf(" %d", c_factorial); // c!
+                                //printf(" %d", c_factorial); // c!
 
                                 if (c == column) {
                                         printf("  %d", a); // '1' at the end
@@ -264,7 +267,7 @@ int main()
                             }
 
                         printf("\n");
-                        column ++;
+                        column++;
                     }
                 break;
 
