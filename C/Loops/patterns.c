@@ -250,16 +250,24 @@ int main()
 
                         // Column iterator
                         for (int c = 1; c <= column; c++) {
+
                             int c_factorial = 1;
-                                // Difference between r and c (r-c)
-                                int difference = r - c;
-                                //printf(" %d ", difference);
+                            int diff_factorial = 1;
+                            // Difference between r and c (r-c)
+                            int difference = r - c;
+                            //printf(" %d ", difference);
 
                                 // c!
                                 for (int count = 1; count <= c; count++) {
                                         c_factorial *= count;
                                     }
                                 //printf(" %d", c_factorial); // c!
+
+                                // difference!
+                                for (int count = 1; count <= difference; count++) {
+                                        diff_factorial *= count;
+                                    }
+                                //printf(" %d", diff_factorial); // difference!
 
                                 if (c == column) {
                                         printf("  %d", a); // '1' at the end
