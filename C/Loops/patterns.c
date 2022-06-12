@@ -225,9 +225,11 @@ int main()
 
 
         case 9: printf("[ Pascal's Triangle ]\n");
+                /* The binomial theorem is a formula for each element of
+                   triangle: (r!) / (c!(r-c)!) */
 
                 char space = ' ';
-                int row, column = 0, a = 1;
+                int row, column = 1, a = 1, result;
                 printf("How many rows? ");
                 scanf("%d", &row);
                 printf("\n");
@@ -235,43 +237,33 @@ int main()
                 // Row iterator
                 for (int r = 1; r <= row; r++) {
                     int r_factorial = 1;
-
                         // Indentation (space)
-                        for (int s = r; s < row - 1; s++) {
+                        for (int s = r; s < row; s++) {
                                 printf("%c", space);
                             }
-                        printf("%d ", a);
-
+                        printf("%d", a); // '1' at the beginning
                         // r!
                         for (int count = 1; count <= r; count++) {
                                 r_factorial *= count;
                             }
-                        //printf(" %d  ", r_factorial); // r!
 
                         // Column iterator
                         for (int c = 1; c <= column; c++) {
-                            int difference = r - c, c_factorial = 1, diff_factorial = 1;
-                            //printf(" %d ", difference);
-
+                            int difference = r - c, c_factorial = 1, diff_factorial = 1,
+                                product;
                                 // c!
                                 for (int count = 1; count <= c; count++) {
                                         c_factorial *= count;
                                     }
-                                //printf(" %d", c_factorial); // c!
-
                                 // (r-c)!
                                 for (int count = 1; count <= difference; count++) {
                                         diff_factorial *= count;
                                     }
-                                //printf(" %d", diff_factorial); // (r-c)!
-
                                 // Multiplication c! * (r-c)!
-                                int product = c_factorial * diff_factorial;
-                                //printf(" %d", product);
+                                product = c_factorial * diff_factorial;
 
-                                if (c == column) {
-                                        printf("  %d", a); // '1' at the end
-                                    }
+                                result = r_factorial / product;
+                                printf(" %d", result);
                             }
 
                         printf("\n");
