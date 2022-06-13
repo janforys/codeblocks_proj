@@ -229,14 +229,15 @@ int main()
                    triangle: (r!) / (c!(r-c)!) */
 
                 char space = ' ';
-                int row, column = 1, a = 1, result;
+                long long int result;
+                int row, column = 1, a = 1;
                 printf("How many rows? ");
                 scanf("%d", &row);
                 printf("\n");
 
                 // Row iterator
                 for (int r = 1; r <= row; r++) {
-                    int r_factorial = 1;
+                    long long int r_factorial = 1;
                         // Indentation (space)
                         for (int s = r; s < row; s++) {
                                 printf("%c", space);
@@ -249,8 +250,8 @@ int main()
 
                         // Column iterator
                         for (int c = 1; c <= column; c++) {
-                            int difference = r - c, c_factorial = 1, diff_factorial = 1,
-                                product;
+                            long long int difference = r - c, c_factorial = 1,
+                            diff_factorial = 1;
                                 // c!
                                 for (int count = 1; count <= c; count++) {
                                         c_factorial *= count;
@@ -259,11 +260,9 @@ int main()
                                 for (int count = 1; count <= difference; count++) {
                                         diff_factorial *= count;
                                     }
-                                // Multiplication c! * (r-c)!
-                                product = c_factorial * diff_factorial;
-
-                                result = r_factorial / product;
-                                printf(" %d", result);
+                                // Final result
+                                result = r_factorial / (c_factorial * diff_factorial);
+                                printf(" %lld", result);
                             }
 
                         printf("\n");
