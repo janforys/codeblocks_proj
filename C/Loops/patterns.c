@@ -272,6 +272,23 @@ int main()
 
 
         case 10: printf("[ Floyd's Triangle ]\n");
+
+                 int row_f, column_f = 0, number_f = 0;
+                 printf("Rows: ");
+                 scanf("%d", &row_f);
+                 printf("\n");
+
+                 // Rows
+                 for (int r = 1; r <= row_f; r++) {
+                        // Columns
+                        for (int c = 0; c <= column_f; c++) {
+                            number_f++;
+                            printf("%d ", number_f);
+                        }
+
+                        printf("\n");
+                        column_f++;
+                     }
                  break;
 
 
