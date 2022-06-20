@@ -10,10 +10,14 @@ int main() {
     int a;
     long b, number;
     long long c;
+    double d;
+    long double e;
 
-    printf("\nint = %zu BYTES (32 bits) \n", sizeof(a));
-    printf("long = %zu BYTES (64 bits) \n", sizeof(b));
-    printf("long long = %zu BYTES (64 bits) \n\n", sizeof(c));
+    printf("int = %zu BYTES (32 bits) \n", sizeof(a));
+    printf("long int = %zu BYTES (64 bits) \n", sizeof(b));
+    printf("long long int = %zu BYTES (64 bits) \n", sizeof(c));
+    printf("double = %zu BYTES (64 bits) \n", sizeof(d));
+    printf("long double = %zu BYTES (128 bits) \n\n", sizeof(e));
 
     printf("Type some enormous number... ");
     scanf("%ld", &number);
