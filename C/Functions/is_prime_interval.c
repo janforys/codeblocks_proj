@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-int primes(int num1, int num2);
+void primes(int num1, int num2);
 
 int main() {
 
@@ -15,14 +15,24 @@ int main() {
     return 0;
 }
 
-int primes(int num1, int num2) {
+void primes(int num1, int num2) {
     // Swap 'num1' with 'num2'
     if (num1 > num2) {
         int temp = num1;
         num1 = num2;
         num2 = temp;
     }
-    for (num1; num1 + 1 < num2; num1++) {
-        // some code here needed
+    for (num1; num1 <= num2; num1++) {
+        int flag = 0; // '0' is for prime number
+            for (int n = 2; n < num1; n++) {
+                if (num1 % n == 0) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0) {
+                printf("%d ", num1);
+            }
     }
+    printf("\n");
 }
