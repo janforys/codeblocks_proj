@@ -14,13 +14,26 @@ int main() {
     scanf("%d", &number);
 
     isArmstrong(number);
-    isPrime(number);
+    //isPrime(number);
 
     return 0;
 }
 
 void isArmstrong(int number) {
-    // some code needed here...
+    int remainder, power = 1, num = number, count = 0;
+        do {
+            number /= 10;
+            count++;
+        } while (number >= 1);
+
+        do {
+            remainder = num % 10;
+            for (int i = 1; i <= count; i++) {
+                    power *= remainder;
+                }
+            num /= 10;
+            printf("%d ", power);
+        } while (num >= 1);
 }
 
 void isPrime(int number) {
