@@ -12,37 +12,47 @@ int main() {
     int user_number, flag;
     printf("Enter positive number: ");
     scanf("%d", &user_number);
-    printf("%d \n", user_number);
+    printf("Number You entered: %d \n\n", user_number);
 
     checkNumber(user_number); // F-ction
 
     if (flag == 1) {
-        printf("Can be expressed\n");
+        printf("\nCan be expressed\n");
     } else {
-        printf("Cannot be expressed\n");
+        printf("\nCannot be expressed\n");
     }
+    printf("FLAG STATE: %d\n", flag);
 
     return 0;
 }
 
 int checkNumber(int user_number) {
-    int prime_1, prime_2, sum, flag = 0, marker_1 = 0, marker_2 = 0;
+    int prime_1, prime_2, flag = 0;
 
     for (prime_1 = 2; prime_1 < user_number; prime_1++) {
-        for (int i = 2; i < prime_1; i++) {
-            if (prime_1 % i == 0) {
-                marker_1 = 1;
-                break;
+        int marker_1 = 0;
+            // Check if 'prime_1' is in fact a prime number
+            for (int i = 2; i < prime_1; i++) {
+                if (prime_1 % i == 0) {
+                    marker_1 = 1;
+                    break;
+                }
             }
-        }
+
         if (marker_1 == 0) {
            for (prime_2 = 2; prime_2 < user_number; prime_2++) {
-               for (int j = 2; j < prime_2; j++) {
-                   if (prime_2 % j == 0) {
-                        marker_2 = 1;
-                        break;
+               int marker_2 = 0;
+                       // Check if 'prime_2' is in fact a prime number
+                       for (int j = 2; j < prime_2; j++) {
+                           if (prime_2 % j == 0) {
+                                marker_2 = 1;
+                                break;
+                           }
+                       }
+                   if (marker_2 == 0) {
+                        printf("%d\n", prime_2);
+                        // some code needed here...
                    }
-               }
            }
         }
     }

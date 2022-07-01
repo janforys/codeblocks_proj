@@ -27,7 +27,7 @@ void isArmstrong(int user_number) {
             power_factor++;
         } while (num1 >= 1);
 
-        // Sum of digits raised to power
+        // Sum of raised to power digits
         while (num2 >= 1) {
             int power = 1;
             int remainder = num2 % 10;
