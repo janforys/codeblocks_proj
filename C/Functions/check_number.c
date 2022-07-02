@@ -3,7 +3,6 @@ of Two Prime Numbers */
 
 
 #include <stdio.h>
-#include <math.h>
 
 int checkNumber(int user_number);
 
@@ -14,14 +13,14 @@ int main() {
     scanf("%d", &user_number);
     printf("Number You entered: %d \n\n", user_number);
 
-    checkNumber(user_number); // F-ction
+    flag = checkNumber(user_number); // F-ction
 
     if (flag == 1) {
         printf("\nCan be expressed\n");
     } else {
         printf("\nCannot be expressed\n");
     }
-    printf("FLAG STATE: %d\n", flag);
+    printf("\nFLAG STATE: %d\n", flag);
 
     return 0;
 }
@@ -50,8 +49,12 @@ int checkNumber(int user_number) {
                            }
                        }
                    if (marker_2 == 0) {
-                        printf("%d\n", prime_2);
-                        // some code needed here...
+                        // Summarize prime numbers
+                        if (prime_1 + prime_2 == user_number) {
+                            printf("%d + %d \n" , prime_1, prime_2);
+                            flag = 1;
+                            break;
+                        }
                    }
            }
         }
