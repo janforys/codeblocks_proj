@@ -12,13 +12,17 @@ int main() {
     scanf("%d", &number);
     printf("Your Number is %d.\n", number);
     int result = recursion(number);
-    printf("Sum of natural numbers is %d.", result);
-
+    printf("\n%d\n", result);
+    printf("Sum of natural numbers is %d.\n", result);
     return 0;
 }
 
 int recursion(int number) {
-    int sum;
-    // some code needed here...
-    return sum;
+    int num2 = 1, result = 0;
+        while(num2 <= number) {
+            result += num2;
+            num2++;
+            printf("%d\n", result);
+        }
+    return result;
 }
