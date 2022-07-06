@@ -11,18 +11,14 @@ int main() {
     printf("Give me some Number: ");
     scanf("%d", &number);
     printf("Your Number is %d.\n", number);
-    int result = recursion(number);
-    printf("\n%d\n", result);
-    printf("Sum of natural numbers is %d.\n", result);
+    printf("Sum of natural numbers is %d.\n", recursion(number));
     return 0;
 }
 
 int recursion(int number) {
-    int num2 = 1, result = 0;
-        while(num2 <= number) {
-            result += num2;
-            num2++;
-            printf("%d\n", result);
-        }
-    return result;
+    if (number > 0) {
+        return number + recursion(number - 1);
+    } else {
+        return 0;
+    }
 }
