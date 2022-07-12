@@ -21,7 +21,6 @@ int main() {
         printf("\nCannot be expressed\n");
     }
     printf("\nFLAG STATE: %d\n", flag);
-
     return 0;
 }
 
@@ -59,6 +58,5 @@ int checkNumber(int user_number) {
            }
         }
     }
-
     return flag;
 }

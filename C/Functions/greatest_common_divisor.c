@@ -8,22 +8,18 @@ int GCD(int num1, int num2);
 int main() {
     int num1, num2;
     printf("Type two numbers: \n");
-    scanf("%d\n%d", &num1, &num2);
+    scanf("%d \n %d", &num1, &num2);
     printf("Greatest Common Divisor: %d \n", GCD(num1, num2));
     return 0;
 }
 
 int GCD(int num1, int num2) {
-    int remainder;
-        if (num1 > num2) {
-            int x = num1;
-            num1 = num2;
-            num2 = x;
-        }
+    int remainder = num2;
         if (remainder != 0) {
-            remainder = num2 % num1;
-            return GCD(remainder, num2);
-        } else {
+            remainder = num1 % num2;
+            printf("%d\n", remainder);
+            GCD(num2, remainder);
+            // something goes wrong here...
             return remainder;
         }
 }
