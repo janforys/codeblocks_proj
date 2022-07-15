@@ -12,23 +12,23 @@ int decimal2binary(int decimal_value);
 int main() {
     int binary_value;
     scanf("%d", &binary_value);
-    printf("%d \n", binary_value);
-    binary2decimal(binary_value);
+    printf("%d \n", binary2decimal(binary_value));
     return 0;
 }
 
 int binary2decimal(int binary_value) {
-    int power_factor = 0, power_result, base, sum;
+    int digit, power_factor = 0, sum_binary = 0;
     while (binary_value >= 1) {
-        base = binary_value % 10;
-        // Count power of base(2)
-        power_result = pow(2, power_factor);
-        sum = sum + base * power_result;
+        digit = binary_value % 10;
+            // Check if 'digit' is different than 0 and 1
+            if ((digit != 0) && (digit != 1)) {
+                printf("ERROR! \n");
+                return 0;
+                break;
+            }
+        sum_binary += digit * pow(2, power_factor); // count power of base = 2
         binary_value /= 10;
-        //printf("%d\n", power_factor);
-        // 'power_factor' is a weight of digits
-        power_factor++;
-        printf("%d\n", power_result);
+        power_factor++; // 'power_factor' is a "weight" of binary value
     }
-    //return 0;
+    return sum_binary;
 }
