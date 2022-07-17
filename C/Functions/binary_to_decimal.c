@@ -10,9 +10,11 @@ int binary2decimal(int binary_value);
 int decimal2binary(int decimal_value);
 
 int main() {
-    int binary_value;
+    int binary_value, decimal_value;
     scanf("%d", &binary_value);
-    printf("%d \n", binary2decimal(binary_value));
+    printf("%d \n\n", binary2decimal(binary_value));
+    scanf("%d", &decimal_value);
+    printf("%d \n", decimal2binary(decimal_value));
     return 0;
 }
 
@@ -31,4 +33,13 @@ int binary2decimal(int binary_value) {
         power_factor++; // 'power_factor' is a "weight" of binary value
     }
     return sum_binary;
+}
+
+int decimal2binary(int decimal_value) {
+    int remainder;
+    while (decimal_value > 1) {
+        remainder = decimal_value % 2;
+        decimal_value /= 2;
+        printf("%d", remainder);
+    }
 }
