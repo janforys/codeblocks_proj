@@ -36,16 +36,19 @@ int binary2decimal(int binary_value) {
 }
 
 int decimal2binary(int decimal_value) {
-    int digit, x = decimal_value, y = decimal_value, power_factor = 0;
-    while (x >= 1) {
-        power_factor++;
-        x /= 2;
+    int multiplier = 1, sum = 0, sum_result = 0;
+    for (int d = decimal_value; d > 1; d /= 2) {
+        multiplier *= 10;
     }
-    //return power_factor;
-    while (y >= 1) {
-        digit = y / sqrt(pow(2, power_factor));
-        power_factor--;
-        y /= 2;
-        printf("%d \n", digit);
-    }
+        int m1 = multiplier;
+        while (decimal_value >= 1) {
+            sum += decimal_value % 2 * m1;
+            decimal_value /= 2;
+            m1 /= 10;
+        } do {
+            sum_result += sum % 10 * multiplier;
+            sum /= 10;
+            multiplier /= 10;
+        } while (sum >= 1);
+    return sum_result;
 }
