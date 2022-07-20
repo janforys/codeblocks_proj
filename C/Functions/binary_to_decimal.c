@@ -28,7 +28,7 @@ int binary2decimal(int binary_value) {
                 return 0;
                 break;
             }
-        sum_binary += digit * pow(2, power_factor); // count power of base = 2
+        sum_binary += digit * pow(2, power_factor); // count power of base = 2 (binary)
         binary_value /= 10;
         power_factor++; // 'power_factor' is a "weight" of binary value
     }
@@ -37,15 +37,16 @@ int binary2decimal(int binary_value) {
 
 int decimal2binary(int decimal_value) {
     int multiplier = 1, sum = 0, sum_result = 0;
+    // Count 'multiplier' value needed for remainder multiplying
     for (int d = decimal_value; d > 1; d /= 2) {
         multiplier *= 10;
     }
-        int m1 = multiplier;
+        int m1 = multiplier; // to avoid 'multiplier' change
         while (decimal_value >= 1) {
             sum += decimal_value % 2 * m1;
             decimal_value /= 2;
             m1 /= 10;
-        } do {
+        } do { // converting to result value
             sum_result += sum % 10 * multiplier;
             sum /= 10;
             multiplier /= 10;
