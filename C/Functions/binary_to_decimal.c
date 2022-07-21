@@ -37,7 +37,7 @@ int binary2decimal(int binary_value) {
 
 int decimal2binary(int decimal_value) {
     int multiplier = 1, sum = 0, sum_result = 0;
-    // Count 'multiplier' value needed for remainder multiplying
+    // Count 'multiplier' value, needed for remainder multiplying
     for (int d = decimal_value; d > 1; d /= 2) {
         multiplier *= 10;
     }
