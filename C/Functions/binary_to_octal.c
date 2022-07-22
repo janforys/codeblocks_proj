@@ -1,5 +1,6 @@
 /* C Program to Convert Binary Number to Octal and vice-versa
 
+Instruction how to make such conversion:
 https://www.electrical4u.com/binary-to-octal-and-octal-to-binary-conversion/ */
 
 
@@ -19,17 +20,22 @@ int main() {
 }
 
 int binary2octal(int binary_value) {
-    int remainder, power_factor, sum1 = 0, sum2 = 0, sum3 = 0;
-    while (binary_value >= 1) {
-    power_factor = 0, sum1 = 0;
-        while (power_factor <= 2) {
-            remainder = binary_value % 10;
-            sum1 = sum1 + remainder * pow(2, power_factor);
-            binary_value /= 10;
-            power_factor++;
+    int power_factor, sum, sum_result, m1, multiplier = 1;
+    /*for (int b = binary_value; b >= 1; b /= 10) {
+        multiplier *= 10;
+    }*/
+    m1 = multiplier;
+        while (binary_value >= 1) {
+        power_factor = 0, sum = 0;
+            while (power_factor <= 2) {
+                sum += binary_value % 10 * pow(2, power_factor);
+                binary_value /= 10;
+                power_factor++;
+            }
+            sum_result += sum *= m1;
+            m1 /= 10;
         }
-        printf("%d", sum1);
-    }
+    printf("%d", sum_result);
     printf("\n");
-    return 44;
+    return 777;
 }
