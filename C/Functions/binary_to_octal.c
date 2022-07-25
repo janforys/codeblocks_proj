@@ -20,22 +20,34 @@ int main() {
 }
 
 int binary2octal(int binary_value) {
-    int power_factor, sum, sum_result, m1, multiplier = 1;
-    /*for (int b = binary_value; b >= 1; b /= 10) {
-        multiplier *= 10;
-    }*/
-    m1 = multiplier;
+    int power_factor, sum, sum_result, result = 0;
+    int m, multiplier = 1, counter = 0;
+
+    // 'multiplier' value counting
+    for (int b = binary_value; b > 1; b /= 10) {
+        counter++;
+        if (counter == 3) { // TODO: counter has to be fixed
+            multiplier *= 10;
+            counter = 0;
+        }
+    }
+    m = multiplier; // to avoid 'multiplier' change
         while (binary_value >= 1) {
         power_factor = 0, sum = 0;
-            while (power_factor <= 2) {
+            while (power_factor < 3) {
                 sum += binary_value % 10 * pow(2, power_factor);
                 binary_value /= 10;
                 power_factor++;
             }
-            sum_result += sum *= m1;
-            m1 /= 10;
+            sum_result += sum *= m; // result before reversing
+            m /= 10;
         }
-    printf("%d", sum_result);
-    printf("\n");
-    return 777;
+    // Reverse 'sum_result' (final result)
+    do {
+        result += sum_result % 10 * multiplier;
+        sum_result /= 10;
+        multiplier /= 10;
+    } while (sum_result >= 1);
+
+    return result;
 }
