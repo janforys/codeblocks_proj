@@ -24,12 +24,17 @@ int binary2octal(int binary_value) {
     int m, multiplier = 1, counter = 0;
 
     // 'multiplier' value counting
-    for (int b = binary_value; b > 1; b /= 10) {
-        counter++;
+    int b = binary_value;
+    while (b >= 1) {
         if (counter == 3) { // TODO: counter has to be fixed
             multiplier *= 10;
             counter = 0;
         }
+        b /= 10;
+        counter++;
+        //printf("%d\n", b);
+        //printf("%d\n", multiplier);
+        //printf("%d\n", counter);
     }
     m = multiplier; // to avoid 'multiplier' change
         while (binary_value >= 1) {
@@ -43,10 +48,14 @@ int binary2octal(int binary_value) {
             m /= 10;
         }
     // Reverse 'sum_result' (final result)
+    //printf("%d\n", multiplier);
+    // TODO: What about do-while loop??
     do {
         result += sum_result % 10 * multiplier;
         sum_result /= 10;
+        printf("%d\n", multiplier);
         multiplier /= 10;
+        printf("%d\n", multiplier);
     } while (sum_result >= 1);
 
     return result;
