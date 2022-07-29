@@ -7,11 +7,11 @@ https://www.electrical4u.com/binary-to-octal-and-octal-to-binary-conversion/ */
 #include "stdio.h"
 #include "math.h"
 
-long int binary2octal(long int binary_value);
+long binary2octal(long binary_value);
 int octal2binary(int octal_value);
 
 int main() {
-    long int binary_value, octal_value;
+    long binary_value, octal_value;
     scanf("%ld", &binary_value);
     printf("%ld \n\n", binary2octal(binary_value));
     //scanf("%d", &octal_value);
@@ -19,22 +19,18 @@ int main() {
     return 0;
 }
 
-long int binary2octal(long int binary_value) {
-    /* TODO: Try to rearrange sequence of variables declaration */
-    long int power_factor;
-    long int sum, sum_result, result = 0;
-    long int m, multiplier = 1, counter = 0;
+long binary2octal(long binary_value) {
+    long sum, sum_result, result = 0;
+    long m, multiplier = 1, counter = 0;
+    long b, power_factor;
 
     // 'multiplier' value counting
-    long int b = binary_value;
-    while (b >= 1) {
+    for (b = binary_value; b /= 10; b >= 1) {
         if (counter == 3) {
             multiplier *= 10;
             counter = 0;
         }
-        b /= 10;
         counter++;
-        printf("%ld\n", multiplier);
     }
     m = multiplier; // to avoid 'multiplier' change
         while (binary_value >= 1) {
@@ -47,12 +43,11 @@ long int binary2octal(long int binary_value) {
             sum_result += sum *= m; // result before reversing
             m /= 10;
         }
-    // Reverse 'sum_result' (final result)
-    while (sum_result >= 1) {
+    // Reverse 'sum_result' to get final result
+    do {
         result += sum_result % 10 * multiplier;
         sum_result /= 10;
         multiplier /= 10;
-    }
-    printf("%ld\n", result);
+    } while (sum_result >= 1);
     return result;
 }
