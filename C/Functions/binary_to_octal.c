@@ -8,11 +8,10 @@ Jan Forys 2022 */
 
 #include "stdio.h"
 #include "math.h"
-//#include "binary_to_decimal.c"
+#include "mylib.h"
 
 long binary2octal(long binary_value);
 int octal2binary(int octal_value);
-int decimal2binary(int decimal_value);
 
 int main() {
     long binary_value;
@@ -58,8 +57,7 @@ long binary2octal(long binary_value) {
 }
 
 int octal2binary(int octal_value) {
-/* TODO: Change 'binary_digit' from string to number.
-         Put 'decimal2binary' function into separate library file. */
+/* TODO: Change 'binary_digit' from string to number */
     int binary_digit;
     while (octal_value >= 1) {
         binary_digit = decimal2binary(octal_value % 10);
@@ -70,21 +68,3 @@ int octal2binary(int octal_value) {
     return 777;
 }
 
-int decimal2binary(int decimal_value) {
-    int m, multiplier = 1, sum = 0, sum_result = 0;
-    // Count 'multiplier' value, needed for remainder multiplying
-    for (int d = decimal_value; d > 1; d /= 2) {
-        multiplier *= 10;
-    }
-    m = multiplier; // to avoid 'multiplier' change
-        while (decimal_value >= 1) {
-            sum += decimal_value % 2 * m;
-            decimal_value /= 2;
-            m /= 10;
-        } do { // converting to result value
-            sum_result += sum % 10 * multiplier;
-            sum /= 10;
-            multiplier /= 10;
-        } while (sum >= 1);
-    return sum_result;
-}
