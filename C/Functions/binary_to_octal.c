@@ -57,14 +57,13 @@ long binary2octal(long binary_value) {
 }
 
 int octal2binary(int octal_value) {
-/* TODO: Change 'binary_digit' from string to number */
-    int binary_digit;
+/* TODO: Change 'binary_digit' to whole value */
     while (octal_value >= 1) {
-        binary_digit = decimal2binary(octal_value % 10);
+        int binary_digit = decimal2binary(octal_value % 10); // from mylib.h
         octal_value /= 10;
         printf("%d", binary_digit);
     }
-    printf("%d\n");
-    return 777;
+    printf("\n");
+    return 1;
 }
 
